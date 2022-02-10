@@ -35,3 +35,15 @@ Metamask inicialmente tiene la red de Ethereum por defecto, para agregar otras r
 Es recomendable agregar la red Mainnet (es la red de produccion) y tambien la red Testnet (usada para pruebas, no impacta en billeteras reales).
 
 ### Crear cuenta en bscscan y obtener el API Key
+
+### Instalar Foal.TS y Node
+
+### Paquetes
+Vamos a usar en principio 2 paquetes para el proyecto
+1. big-number
+2. axios
+
+Utilizando Foal vamos a crear los diferentes componentes que vamos a ir necesitando en el proyecto:
+
+Servicio para conectarse con la API de la BSC
+foal generate service bscScanApi
