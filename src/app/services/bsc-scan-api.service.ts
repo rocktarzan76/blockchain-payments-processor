@@ -1,5 +1,7 @@
 import { Env } from '@foal/core';
 import * as axios from 'axios';
+import { IBscScanResponse } from '../interfaces/bsc-scan-response.interface';
+import { IBscScanTransaction } from '../interfaces/bsc-scan-transaction.interface';
 
 const apiUrl = "https://api.bscscan.com/api";
    //&contractaddress=0xc9849e6fdb743d08faee3e34dd2d1bc69ea11a51
@@ -26,8 +28,8 @@ export class BscScanApi {
     if (response.status !== 200) {
       throw new Error(`Error code ${response.status} - ${response.statusText}`);
     }
-    const json = response.data;
-    return json;
+    const bscScanResponse = response.data as IBscScanResponse<IBscScanTransaction[]>;
+    return bscScanResponse.result;
   }
 
   private loadSettings(){
